@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>	
+    <link href="minimal.css" rel="stylesheet">
+ <script>
+    var source = new EventSource('ServletURLPattern');
+    source.onmessage = function (e) {
+        var readings = document.getElementById('readings');
+        readings.innerHTML += e.data + '<br>';
+    };
+</script>  
+</head>
+
+<body>
+    <h1></h1>
+    <div id="readings"></div>
+</body>
+</html>
